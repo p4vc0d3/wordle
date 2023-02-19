@@ -49,6 +49,8 @@ export default {
             return;
         }
 
+        this.refreshStatusForCurrentRow();
+
         if (guess === this.theWord) {
             this.message = "You Win!";
         } else if (this.guessesAllowed === this.currentRowIndex + 1) {
@@ -59,4 +61,13 @@ export default {
             this.currentRowIndex++;
         }
     },
+    refreshStatusForCurrentRow() {
+        this.currentRow.forEach((tile, index) => {
+            tile.status = this.theWord.includes(tile.letter) ? 'present' : 'absent';
+
+            if (this.currentGuess[index] === this.theWord[index]) {
+                tile.status = 'correct';
+            }
+        });
+    }
 };

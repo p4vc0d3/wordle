@@ -25,7 +25,7 @@ export default {
         this.board = Array.from({ length: this.guessesAllowed }, () => {
             return Array.from(
                 { length: this.theWord.length },
-                () => new Tile()
+                ( item, index) => new Tile(index)
             );
         });
     },
@@ -72,9 +72,7 @@ export default {
             return this.message = 'Invalid Word';
         }
 
-        for (let tile of this.currentRow) {
-            tile.updateStatus(this.currentGuess, this.theWord);
-        }
+        Tile.updateStatusesForRow(this.currentRow, this.theWord);
 
         if (this.currentGuess === this.theWord) {
             this.state = "complete";

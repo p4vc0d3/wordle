@@ -134,3 +134,16 @@ output:empty {
     display: none;
     color: #496e9e;
 }
+
+#keyboard {
+    margin-top: 2rem;
+}
+
+.key {
+    background: #c5c5c5;
+    border: 0;
+    margin: 2px;
+    height: 50px;
+    min-width: 40px;
+    border-radius: 4px;
+}

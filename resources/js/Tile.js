@@ -9,4 +9,12 @@ export default class Tile {
     empty() {
         this.letter = "";
     }
+
+    updateStatus(currentGuess, theWord) {
+        this.status = theWord.includes(this.letter) ? 'present' : 'absent';
+
+        if (currentGuess.indexOf(this.letter) === theWord.indexOf(this.letter)) {
+            this.status = 'correct';
+        }       
+    }
 }

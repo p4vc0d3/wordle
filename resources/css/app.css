@@ -121,13 +121,15 @@ header {
 }
 
 output {
-    text-align: center;
     display: block;
     font-weight: 500;
-    font-size: 20px;
+    font-style: italic;
+    font-size: 17px;
     margin-top: 1rem;
-    position: fixed;
-    inset: auto 0 3rem 0;
+    position: absolute;
+    top: 0;
+    right: -1.5rem;
+    width: 150px;
 }
 
 output:empty {
